@@ -5,14 +5,12 @@ import java.io.*;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class CSVReader {
     private ArrayList<BankAccount> bankAccounts  = new ArrayList<BankAccount>();
-    public static long generateAccNum(String ACCOUNT_NUMBER) {
-        long LONG_ACCOUNT_NUMBER = Long.parseLong(ACCOUNT_NUMBER);
-        return LONG_ACCOUNT_NUMBER;
-    }
+
     public static void main(String[] args) {
 
         String file = "/Users/nburchiel/IdeaProjects/BankApplication/src/NewBankAccounts.csv";
@@ -33,17 +31,10 @@ public class CSVReader {
                     Double initialDeposit = Double.parseDouble(row[3]);
                     String Deposit = NumberFormat.getCurrencyInstance().format(initialDeposit);
 
-                if (accountType.equals("Checking")) {
-                    Checking checkAcc = new Checking(accountName,socialSecurity,initialDeposit);
-                }
-                if (accountType.equals("Saving")) {
-                    Saving saveAcc = new Saving(accountName,socialSecurity,initialDeposit);
-                }
-
 
 
                 //Account Divider
-                System.out.println("-----------------------------------------------");
+                System.out.println("-----------------------------------------------------------");
 
                 //Account Info
                 System.out.println("Account Name = " + accountName);
@@ -57,8 +48,22 @@ public class CSVReader {
                 //Starting account number with 1 or 2 depending on Account Type
                 if (accountType.equals("Checking")){
                     accountNumber.add(1);
+                    long debitCardNumber = generateRandom(12);
+                    System.out.println("Debit Card: " + debitCardNumber);
                 } else if (accountType.equals("Savings")){
                     accountNumber.add(2);
+                    long safetyDepositBoxNum = generateRandom(3);
+                    System.out.println("Safety Deposit Box: " + safetyDepositBoxNum);
+                    Scanner setPIN = new Scanner(System.in);
+                    String safetyPIN = "";
+                    while (safetyPIN.length() != 4 || !safetyPIN.matches("[0-9]")) {
+                        System.out.println("Please Enter Your Safety Deposit Box 4-Digit PIN:");
+                        safetyPIN = setPIN.nextLine();
+                        System.out.println("***INCORRECT INPUT*** \n" +
+                                "Please enter 4 digits (0-9)");
+                    }
+                    System.out.println("Your Safety PIN is: " + safetyPIN);
+
                 }
 
                 // Last two digits of SSN
@@ -85,6 +90,7 @@ public class CSVReader {
                 generateAccNum(ACCOUNT_NUMBER);
 
 
+
                 // Formatted account summary
                 for(String index : row) {
 
@@ -104,5 +110,22 @@ public class CSVReader {
             }
 
         }
+
+    }
+
+    private static long generateRandom(int length) {
+        Random random = new Random();
+        char[] digits = new char[length];
+        digits[0] = (char) (random.nextInt(9) + '1');
+        for (int i = 1; i < length; i++) {
+            digits[i] = (char) (random.nextInt(10) + '0');
+        }
+        return Long.parseLong(new String(digits));
+        }
+
+    public static long generateAccNum(String ACCOUNT_NUMBER) {
+        long LONG_ACCOUNT_NUMBER = Long.parseLong(ACCOUNT_NUMBER);
+        return LONG_ACCOUNT_NUMBER;
     }
 }
+

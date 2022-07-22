@@ -9,7 +9,6 @@ abstract class BankAccount {
     String SSN;
     String accountOwner;
     double initialDeposit;
-    int unique5Digit = 99999;
 
     public BankAccount(String accountOwner, String SSN, double initialDeposit) {
         this.accountOwner = accountOwner;
@@ -53,7 +52,7 @@ abstract class BankAccount {
         char[] digits = new char[length];
         digits[0] = (char) (random.nextInt(9) + '1');
         for (int i = 1; i < length; i++) {
-            digits[i] = (char) (random.nextInt(10) + '0');
+            digits[i] = (char) (random.nextInt(10));
         }
         return Long.parseLong(new String(digits));
     }

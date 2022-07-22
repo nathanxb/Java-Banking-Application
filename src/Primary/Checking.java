@@ -13,7 +13,7 @@ public class Checking extends BankAccount implements BaseInterestRate{
         super(accountName,socialSecurity, initialDeposit);
         this.accountOwner = accountName;
         this.SSN = socialSecurity;
-        this.checkingBalance = checkingBalance += initialDeposit;
+        this.checkingBalance = initialDeposit;
         this.accType = "Checking";
 
     }

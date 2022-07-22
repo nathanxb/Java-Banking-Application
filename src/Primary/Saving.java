@@ -1,5 +1,7 @@
 package Primary;
 
+import java.util.Scanner;
+
 public class Saving extends BankAccount implements BaseInterestRate{
 
     private double savingBalance = 0;
@@ -10,7 +12,7 @@ public class Saving extends BankAccount implements BaseInterestRate{
         super(accountName,socialSecurity, initialDeposit);
         this.accountOwner = accountName;
         this.SSN = socialSecurity;
-        this.savingBalance = savingBalance += initialDeposit;
+        this.savingBalance = initialDeposit;
         this.accType = "Saving";
 
     }
@@ -20,6 +22,8 @@ public class Saving extends BankAccount implements BaseInterestRate{
         generateRandom(3);
 
         // Accessed with a 4-digit code
+            // Use Scanner for user PIN input
+        Scanner enterPIN = new Scanner(System.in);
 
     }
     @Override
@@ -36,12 +40,13 @@ public class Saving extends BankAccount implements BaseInterestRate{
 
     @Override
     public void Transfer(double amountTransferred) {
-
+        savingBalance = savingBalance -= amountTransferred;
+        checkingBalance = checkingBalance += amountTransferred;
     }
 
     @Override
     public void ShowInfo() {
-        System.out.println("Account Type = Checking");
+        System.out.println("Account Type = Saving");
         System.out.println(accountOwner);
         System.out.println(SSN);
         System.out.println(savingBalance);
