@@ -56,11 +56,12 @@ public class CSVReader {
                     System.out.println("Safety Deposit Box: " + safetyDepositBoxNum);
                     Scanner setPIN = new Scanner(System.in);
                     String safetyPIN = "";
-                    while (safetyPIN.length() != 4 || !safetyPIN.matches("[0-9]")) {
+                    while (safetyPIN.length() != 4
+                            //|| !safetyPIN.matches("[0-9]")
+                            ) {
                         System.out.println("Please Enter Your Safety Deposit Box 4-Digit PIN:");
                         safetyPIN = setPIN.nextLine();
-                        System.out.println("***INCORRECT INPUT*** \n" +
-                                "Please enter 4 digits (0-9)");
+                        System.out.println("***INCORRECT INPUT*** Please enter 4 digits (0-9)");
                     }
                     System.out.println("Your Safety PIN is: " + safetyPIN);
 

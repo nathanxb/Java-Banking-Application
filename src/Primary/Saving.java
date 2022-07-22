@@ -28,20 +28,20 @@ public class Saving extends BankAccount implements BaseInterestRate{
     }
     @Override
     public void Deposit(double amountDeposited) {
-        savingBalance = savingBalance += amountDeposited;
+        savingBalance += amountDeposited;
 
     }
 
     @Override
     public void Withdraw(double amountWithdrawn) {
-        savingBalance = savingBalance += amountWithdrawn;
+        savingBalance += amountWithdrawn;
 
     }
 
     @Override
     public void Transfer(double amountTransferred) {
-        savingBalance = savingBalance -= amountTransferred;
-        checkingBalance = checkingBalance += amountTransferred;
+        savingBalance -= amountTransferred;
+        checkingBalance += amountTransferred;
     }
 
     @Override

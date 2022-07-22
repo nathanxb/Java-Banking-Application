@@ -24,18 +24,18 @@ public class Checking extends BankAccount implements BaseInterestRate{
 
     @Override
     public void Deposit(double amountDeposited) {
-            checkingBalance = checkingBalance += amountDeposited;
+            checkingBalance += amountDeposited;
     }
 
     @Override
     public void Withdraw(double amountWithdrawn) {
-            checkingBalance = checkingBalance -= amountWithdrawn;
+        checkingBalance -= amountWithdrawn;
     }
 
     @Override
     public void Transfer(double amountTransferred) {
-        checkingBalance = checkingBalance -= amountTransferred;
-        savingBalance = savingBalance += amountTransferred;
+        checkingBalance -= amountTransferred;
+        savingBalance += amountTransferred;
 
     }
 

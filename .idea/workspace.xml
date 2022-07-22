@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d0a0ab8-ffc6-4f12-882b-983a6774ae59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Primary/BankAccountFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Primary/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Primary/BankAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Primary/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Primary/CSVReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Primary/Checking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Primary/Checking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Primary/Saving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Primary/Saving.java" afterDir="false" />
